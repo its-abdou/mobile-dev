@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -14,84 +15,89 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText num1, num2;
-    private RadioGroup operationGroup;
-    private TextView result;
-    private Button validate, reset, exit;
+    private EditText eurValue, daValue;
+    private RadioGroup conversionGroup;
+    private ImageButton flag1, flag2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        num1 = findViewById(R.id.num1);
-        num2 = findViewById(R.id.num2);
-        operationGroup = findViewById(R.id.operationGroup);
-        result = findViewById(R.id.result);
-        validate = findViewById(R.id.validate);
-        reset = findViewById(R.id.reset);
-        exit = findViewById(R.id.exit);
+      eurValue = findViewById(R.id.eurValue);
+      daValue = findViewById(R.id.daValue);
+      conversionGroup = findViewById(R.id.conversionGroup);
+      flag1 = findViewById(R.id.flag1);
+      flag2 = findViewById(R.id.flag2);
 
-        // Handle Calculation
-        validate.setOnClickListener(new View.OnClickListener() {
+
+        flag1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                calculateResult();
+                String daValueStr = daValue.getText().toString();
+                if (daValueStr.isEmpty()) {
+                    Toast.makeText(MainActivity.this, "Veuillez entrer une valeur.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                float valeurDinar = Float.parseFloat(daValueStr);
+                float valeurEuro = dinarsToEuro(valeurDinar);
+                eurValue.setText(String.valueOf(valeurEuro));
+
+
             }
         });
 
 
-        // Handle Exit
-        exit.setOnClickListener(new View.OnClickListener() {
+
+        flag2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish(); // Closes the app
+                String eurValueStr = eurValue.getText().toString();
+                if (eurValueStr.isEmpty()) {
+                    Toast.makeText(MainActivity.this, "Veuillez entrer une valeur.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                float valeurEuro = Float.parseFloat(eurValueStr);
+                float valeurDinar = euroToDinar(valeurEuro);
+                daValue.setText(String.valueOf(valeurDinar));
             }
         });
     }
-
-    private void calculateResult() {
-        String val1 = num1.getText().toString();
-        String val2 = num2.getText().toString();
-
-        if (val1.isEmpty() || val2.isEmpty()) {
-            Toast.makeText(this, "Veuillez entrer les deux valeurs.", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        double number1 = Double.parseDouble(val1);
-        double number2 = Double.parseDouble(val2);
-        double res = 0;
-
-        int selectedId = operationGroup.getCheckedRadioButtonId();
+    private float dinarsToEuro(float valeurDinar) {
+        double dinarPrice = 0;
+        int selectedId = conversionGroup.getCheckedRadioButtonId();
         if (selectedId == -1) {
             Toast.makeText(this, "Veuillez sélectionner une opération.", Toast.LENGTH_SHORT).show();
-            return;
+
         }
+        if (selectedId == R.id.parallèle) {
+            dinarPrice = 0.004;
 
-        if (selectedId == R.id.addition) {
-            res = number1 + number2;
-        } else if (selectedId == R.id.subtraction) {
-            res = number1 - number2;
-        } else if (selectedId == R.id.multiplication) {
-            res = number1 * number2;
-        } else if (selectedId == R.id.division) {
-            if (number2 == 0) {
-                Toast.makeText(this, "Division par zéro impossible!", Toast.LENGTH_SHORT).show();
-                return;
-            }
-            res = number1 / number2;
+        } else if (selectedId == R.id.officiel) {
+            dinarPrice = 0.0072;
         }
+        return (float) (valeurDinar * dinarPrice);
+    };
 
-        result.setText("Résultat : " + res);
-    }
+    private float euroToDinar(float valeurEuro) {
+        double euroPrice = 0;
+        int selectedId = conversionGroup.getCheckedRadioButtonId();
+        if (selectedId == -1) {
+            Toast.makeText(this, "Veuillez sélectionner une opération.", Toast.LENGTH_SHORT).show();
 
-    // Handle Reset
-    public void resetFields(View view) {
-        num1.setText("");
-        num2.setText("");
-        operationGroup.clearCheck();
-        result.setText("Résultat :");
-    }
+        }
+        if (selectedId == R.id.parallèle) {
+            euroPrice = 250;
+
+        } else if (selectedId == R.id.officiel) {
+            euroPrice = 138.15;
+        }
+        return (float) (valeurEuro * euroPrice);
+    };
+   public void ResetFields(View view){
+       eurValue.setText("");
+       daValue.setText("");
+       conversionGroup.clearCheck();
+   }
 }
 
