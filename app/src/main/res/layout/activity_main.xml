@@ -3,76 +3,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:gravity="center">
+    android:gravity="center_vertical">
 
-    <EditText
-        android:id="@+id/num1"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Valeur 1"
-        android:inputType="numberDecimal"/>
+        android:orientation="vertical"
+        android:gravity="center">
 
-    <EditText
-        android:id="@+id/num2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Valeur 2"
-        android:inputType="numberDecimal"/>
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:layout_marginHorizontal="20dp"/>
 
-    <RadioGroup
-        android:id="@+id/operationGroup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:layout_marginHorizontal="20dp"/>
 
-        <RadioButton
-            android:id="@+id/addition"
+        <Button
+            android:id="@+id/login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Somme"/>
-
-        <RadioButton
-            android:id="@+id/subtraction"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Soustraction"/>
-
-        <RadioButton
-            android:id="@+id/multiplication"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Multiplication"/>
-
-        <RadioButton
-            android:id="@+id/division"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Division"/>
-    </RadioGroup>
+            android:layout_marginTop="50dp"
+            android:onClick="Login"
+            android:text="LOGIN"/>
+    </LinearLayout>
 
     <TextView
-        android:id="@+id/result"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Résultat :"
-        android:textSize="18sp"/>
-
-    <Button
-        android:id="@+id/validate"
+        android:id="@+id/attemptNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="VALIDER"/>
+        android:layout_marginTop="50dp"
+        android:text=""
+        android:paddingLeft="10dp"/>
 
-    <Button
-        android:id="@+id/reset"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="RAZ"
-        android:onClick="resetFields"/>
 
-    <Button
-        android:id="@+id/exit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="QUITTER"/>
+
+
 </LinearLayout>
