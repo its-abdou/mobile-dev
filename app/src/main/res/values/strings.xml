@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">mob_dev_tp</string>
+    <string-array name="Gender">
+        <item>Femme</item>
+        <item>Homme</item>
+    </string-array>
+    <string-array name="Weight">
+        <item>kg</item>
+
+    </string-array>
+    <string-array name="Height">
+        <item>cm</item>
+    </string-array>
+
+    <string name="bmi_underweight">Maigreur</string>
+    <string name="bmi_normal">Normale</string>
+    <string name="bmi_overweight">Surpoids</string>
+
+    <string name="gender_format">Genre: %1$s</string>
+    <string name="age">Age: </string>
+    <string name="height_format">Taille: %1$s cm</string>
+    <string name="weight_format">Masse corporelle: %1$s kg</string>
+    <string name="imc_format">%1$s kg/m²</string>
 </resources>

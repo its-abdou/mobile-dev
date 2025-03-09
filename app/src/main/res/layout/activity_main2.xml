@@ -5,11 +5,100 @@
     android:orientation="vertical"
     android:gravity="center">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/img" />
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    android:padding="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vos information sont:"
+            android:textSize="20dp"/>
+        <TextView
+            android:id="@+id/gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Genre: "
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"/>
+        <TextView
+            android:id="@+id/age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Age:"
+            android:textSize="20dp"/>
+        <TextView
+            android:id="@+id/weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Masse corporelle:"
+            android:textSize="20dp"
+            />
+        <TextView
+            android:id="@+id/height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Taille:"
+            android:textSize="20dp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Deuxieme Activity"
-        android:textSize="30dp"/>
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginBottom="40dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Votre IMC est:"
+            android:textSize="30dp"
+            android:textColor="#1C70B3"
+            />
+        <TextView
+            android:id="@+id/imc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20kg/m²"
+            android:textSize="30dp"
+            android:textColor="#1C70B3"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginBottom="30dp">
+        <TextView
+            android:id="@+id/interpretation"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="Selon la classification de l'OMS, l’interprétation de votre IMC est:"
+            android:textSize="20dp"
+            android:textColor="#D01313"
+            />
+        <TextView
+            android:id="@+id/range"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Surpoids"
+            android:textSize="20dp"
+            android:textColor="#D01313"
+            android:layout_marginTop="20dp"
+            />
+
+    </LinearLayout>
+
+
 </LinearLayout>
 
 
