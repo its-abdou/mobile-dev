@@ -18,7 +18,7 @@
 
     <string name="gender_format">Genre: %1$s</string>
     <string name="age">Age: </string>
-    <string name="height_format">Taille: %1$s cm</string>
+    <string name="height_format">Taille: %1$s %1$s cm</string>
     <string name="weight_format">Masse corporelle: %1$s kg</string>
     <string name="imc_format">%1$s kg/m²</string>
 </resources>

@@ -5,129 +5,17 @@
     android:orientation="vertical"
     android:gravity="center">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Indiquer votre poids (kg) et taille (en cm) pour calculer votre indice de mésure corporelle"
-        android:gravity="center"
-        android:padding="16dp"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="20dp">
-
-        <ImageView
-            android:layout_width="55dp"
-            android:layout_height="36dp"
-            android:src="@drawable/age"
-            android:scaleType="fitCenter"
-            android:adjustViewBounds="true"
-            android:padding="0dp"
-            android:layout_marginHorizontal="20dp"
-            android:contentDescription="Age icon"/>
-
-        <EditText
-            android:id="@+id/age"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:hint="Entrez votre âge"
-            android:layout_marginHorizontal="20dp"/>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="20dp">
-
-        <ImageView
-            android:layout_width="55dp"
-            android:layout_height="36dp"
-            android:src="@drawable/gender"
-            android:scaleType="fitCenter"
-            android:adjustViewBounds="true"
-            android:padding="0dp"
-            android:layout_marginHorizontal="20dp"
-            android:contentDescription="Gender icon"/>
-
-        <Spinner
-            android:id="@+id/gender"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"/>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="20dp">
-
-        <ImageView
-            android:layout_width="55dp"
-            android:layout_height="36dp"
-            android:src="@drawable/weight"
-            android:scaleType="fitCenter"
-            android:adjustViewBounds="true"
-            android:padding="0dp"
-            android:layout_marginHorizontal="20dp"
-            android:contentDescription="Weight icon"/>
-
-        <EditText
-            android:id="@+id/weight"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:inputType="numberDecimal"
-            android:hint="Entrez votre poids" />
-
-        <Spinner
-            android:id="@+id/kg"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"/>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="20dp">
-
-        <ImageView
-            android:layout_width="55dp"
-            android:layout_height="36dp"
-            android:src="@drawable/hight"
-            android:scaleType="fitCenter"
-            android:adjustViewBounds="true"
-            android:padding="0dp"
-            android:layout_marginHorizontal="20dp"
-            android:contentDescription="Height icon"/>
-
-        <EditText
-            android:id="@+id/height"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:inputType="numberDecimal"
-            android:hint="Entrez votre taille" />
-
-        <Spinner
-            android:id="@+id/cm"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"/>
-
-    </LinearLayout>
     <Button
-        android:id="@+id/Calculate"
+        android:id="@+id/WebBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Calculer"
-        android:onClick="Calcule"/>
+        android:text="Go GOOGLE"
+        android:onClick="Google"/>
+    <Button
+        android:id="@+id/MailBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send Email"
+        android:onClick="SendMail"/>
 
 </LinearLayout>
