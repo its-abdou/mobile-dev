@@ -5,17 +5,29 @@
     android:orientation="vertical"
     android:gravity="center">
 
-    <Button
-        android:id="@+id/WebBtn"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go GOOGLE"
-        android:onClick="Google"/>
+        android:text="École nationale polytechnique d'Oran - Maurice Audin "
+        android:textSize="20dp"
+        android:gravity="center"
+    />
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/img"
+        android:layout_marginVertical="80dp"
+    />
+
+
     <Button
-        android:id="@+id/MailBtn"
+        android:id="@+id/SMSBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Send Email"
-        android:onClick="SendMail"/>
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="10dp"
+        android:text="Enter"
+        android:onClick="SendMessage"
+    />
 
 </LinearLayout>

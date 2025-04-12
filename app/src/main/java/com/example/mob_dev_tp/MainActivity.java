@@ -20,13 +20,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    public void Google(View view){
-        Uri uri = Uri.parse("https://www.google.fr/");
-        Intent intent = new Intent(Intent.ACTION_VIEW,uri);
-        startActivity(intent);
-    }
-    public void SendMail(View view){
-        Uri uri = Uri.parse("mailto:imsipromo23@gmail.com");
+    public void SendMessage(View view){
+        Uri uri = Uri.parse("smsto:0791384193");
         Intent intent = new Intent(Intent.ACTION_SENDTO,uri);
         startActivity(intent);
     }
