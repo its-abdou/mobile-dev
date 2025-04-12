@@ -1,20 +1,10 @@
 <resources>
     <string name="app_name">mob_dev_tp</string>
-    <string-array name="Gender">
-        <item>Femme</item>
-        <item>Homme</item>
-    </string-array>
-    <string-array name="Weight">
-        <item>kg</item>
-
-    </string-array>
-    <string-array name="Height">
-        <item>cm</item>
+    <string-array name="Unit">
+        <item>Fahrenheit</item>
+        <item>Celsius</item>
     </string-array>
 
-    <string name="bmi_underweight">Maigreur</string>
-    <string name="bmi_normal">Normale</string>
-    <string name="bmi_overweight">Surpoids</string>
 
     <string name="gender_format">Genre: %1$s</string>
     <string name="age">Age: </string>

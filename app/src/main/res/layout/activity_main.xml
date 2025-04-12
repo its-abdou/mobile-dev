@@ -5,29 +5,86 @@
     android:orientation="vertical"
     android:gravity="center">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="École nationale polytechnique d'Oran - Maurice Audin "
-        android:textSize="20dp"
         android:gravity="center"
-    />
-    <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:src="@drawable/img"
-        android:layout_marginVertical="80dp"
-    />
+        android:paddingVertical="20dp"
+        android:layout_marginVertical="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="From"
+            android:textSize="20dp"
+            android:layout_marginRight="10dp"/>
+        <Spinner
+            android:id="@+id/convertFrom"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingVertical="20dp"
+        android:layout_marginVertical="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="To"
+            android:textSize="20dp"
+            android:layout_marginRight="10dp"/>
+        <Spinner
+            android:id="@+id/convertTo"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingVertical="20dp"
+        android:layout_marginVertical="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Value"
+            android:textSize="20dp"
+            android:layout_marginRight="15dp"/>
+        <EditText
+            android:id="@+id/inputValue"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"/>
+    </LinearLayout>
 
 
-    <Button
-        android:id="@+id/SMSBtn"
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginHorizontal="75dp">
+       <Button
+           android:id="@+id/ConvertBtn"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:paddingHorizontal="15dp"
+           android:paddingVertical="10dp"
+           android:text="CONVERT"
+           android:onClick="convert"
+           />
+   </LinearLayout>
+
+    <TextView
+        android:id="@+id/resultText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="15dp"
-        android:paddingVertical="10dp"
-        android:text="Enter"
-        android:onClick="SendMessage"
-    />
+        android:layout_marginTop="100dp"
+        android:text="Results"
+        android:textColor="#4CAF50"
+        android:textSize="30dp" />
 
 </LinearLayout>
