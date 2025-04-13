@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    float valeurDinar = Float.parseFloat(daValue.getText().toString(););
+                    float valeurDinar = Float.parseFloat(daValue.getText().toString());
                     float valeurEuro = dinarsToEuro(valeurDinar);
                     eurValue.setText(String.valueOf(valeurEuro));
                 }catch (Exception e){
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try{
-                    float valeurEuro = Float.parseFloat(eurValue.getText().toString(););
+                    float valeurEuro = Float.parseFloat(eurValue.getText().toString());
                     float valeurDinar = euroToDinar(valeurEuro);
                     daValue.setText(String.valueOf(valeurDinar));
 
