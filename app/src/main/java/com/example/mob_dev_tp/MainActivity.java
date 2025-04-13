@@ -34,16 +34,13 @@ public class MainActivity extends AppCompatActivity {
         flag1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String daValueStr = daValue.getText().toString();
-                if (daValueStr.isEmpty()) {
+                try {
+                    float valeurDinar = Float.parseFloat(daValue.getText().toString(););
+                    float valeurEuro = dinarsToEuro(valeurDinar);
+                    eurValue.setText(String.valueOf(valeurEuro));
+                }catch (Exception e){
                     Toast.makeText(MainActivity.this, "Veuillez entrer une valeur.", Toast.LENGTH_SHORT).show();
-                    return;
                 }
-                float valeurDinar = Float.parseFloat(daValueStr);
-                float valeurEuro = dinarsToEuro(valeurDinar);
-                eurValue.setText(String.valueOf(valeurEuro));
-
-
             }
         });
 
@@ -52,14 +49,15 @@ public class MainActivity extends AppCompatActivity {
         flag2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String eurValueStr = eurValue.getText().toString();
-                if (eurValueStr.isEmpty()) {
+                try{
+                    float valeurEuro = Float.parseFloat(eurValue.getText().toString(););
+                    float valeurDinar = euroToDinar(valeurEuro);
+                    daValue.setText(String.valueOf(valeurDinar));
+
+                }catch (Exception e){
                     Toast.makeText(MainActivity.this, "Veuillez entrer une valeur.", Toast.LENGTH_SHORT).show();
-                    return;
                 }
-                float valeurEuro = Float.parseFloat(eurValueStr);
-                float valeurDinar = euroToDinar(valeurEuro);
-                daValue.setText(String.valueOf(valeurDinar));
+
             }
         });
     }
@@ -69,8 +67,7 @@ public class MainActivity extends AppCompatActivity {
         if (selectedId == -1) {
             Toast.makeText(this, "Veuillez sélectionner une opération.", Toast.LENGTH_SHORT).show();
 
-        }
-        if (selectedId == R.id.parallèle) {
+        } else if (selectedId == R.id.parallèle) {
             dinarPrice = 0.004;
 
         } else if (selectedId == R.id.officiel) {
@@ -85,8 +82,7 @@ public class MainActivity extends AppCompatActivity {
         if (selectedId == -1) {
             Toast.makeText(this, "Veuillez sélectionner une opération.", Toast.LENGTH_SHORT).show();
 
-        }
-        if (selectedId == R.id.parallèle) {
+        } else if (selectedId == R.id.parallèle) {
             euroPrice = 250;
 
         } else if (selectedId == R.id.officiel) {
