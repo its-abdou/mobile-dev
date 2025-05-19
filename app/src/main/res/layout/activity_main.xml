@@ -1,57 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center_horizontal">
+    android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/image"
+    <!-- Your main layout with LinearLayout -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/bookList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            />
+
+
+    </LinearLayout>
+
+    <!-- Floating Action Button positioned in bottom-right corner -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addBook"
         android:layout_width="wrap_content"
-        android:layout_height="300dp"
-        android:scaleType="fitCenter"
-        android:adjustViewBounds="true"
-        android:src="@drawable/img"
-
-    />
-
-
-   <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:padding="30dp"
-       android:layout_margin="20dp">
-       <Button
-           android:id="@+id/selectBtn"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="SELECT IMAGE"
-           android:onClick="select"/>
-
-       <Button
-           android:id="@+id/shareImgBtn"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="SHARE IMAGE"
-           android:onClick="shareImg"
-           android:layout_marginLeft="10dp"/>
-
-   </LinearLayout>
-
-    <EditText
-        android:id="@+id/text"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:layout_marginTop="50dp"
-        />
-
-    <Button
-        android:id="@+id/shareTextBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="SHARE TEXT"
-        android:layout_marginTop="100dp"
-        android:onClick="shareText"/>
-
-</LinearLayout>
+        android:layout_gravity="bottom|end"
+        android:layout_margin="30dp"
+        android:contentDescription="Add"
+        android:onClick="goToAddBook"
+        android:src="@android:drawable/ic_input_add"
+       />
+</FrameLayout>
