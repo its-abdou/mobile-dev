@@ -5,29 +5,6 @@
     android:orientation="vertical"
     android:gravity="center">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="École nationale polytechnique d'Oran - Maurice Audin "
-        android:textSize="20dp"
-        android:gravity="center"
-    />
-    <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:src="@drawable/img"
-        android:layout_marginVertical="80dp"
-    />
 
-
-    <Button
-        android:id="@+id/SMSBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="15dp"
-        android:paddingVertical="10dp"
-        android:text="Enter"
-        android:onClick="SendMessage"
-    />
 
 </LinearLayout>

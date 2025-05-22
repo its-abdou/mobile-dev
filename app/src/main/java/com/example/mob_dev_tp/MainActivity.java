@@ -15,11 +15,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    public void SendMessage(View view){
-        Uri uri = Uri.parse("smsto:0791384193");
-        Intent intent = new Intent(Intent.ACTION_SENDTO,uri);
-        startActivity(intent);
-    }
+
 }
 
 
