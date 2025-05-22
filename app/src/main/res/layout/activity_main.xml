@@ -1,34 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
     android:layout_width="match_parent"
+    android:paddingVertical="16dp"
     android:layout_height="match_parent">
 
-    <!-- Your main layout with LinearLayout -->
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp">
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/bookList"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            />
-
-
-    </LinearLayout>
-
-    <!-- Floating Action Button positioned in bottom-right corner -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/addBook"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="30dp"
-        android:contentDescription="Add"
-        android:onClick="goToAddBook"
-        android:src="@android:drawable/ic_input_add"
-       />
-</FrameLayout>
+        android:text="username"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:textColor="#858385"/>
+
+    <EditText
+        android:id="@+id/username_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Name"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="password"
+        android:layout_marginTop="15dp"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:textColor="#858385"/>
+
+    <EditText
+        android:id="@+id/password_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Password"
+        android:gravity="center"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="15dp"
+        android:layout_marginVertical="15dp">
+        <Button
+            android:id="@+id/addBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="ADD USER "
+            android:onClick="add"
+            />
+
+        <Button
+            android:id="@+id/viewBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="VIEW DATA"
+            android:onClick="viewAll"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="15dp"
+        android:layout_marginVertical="15dp">
+
+        <EditText
+            android:id="@+id/oldName_input"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:hint="Current Name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center"/>
+
+        <EditText
+            android:id="@+id/newName_input"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:hint="New Name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf ="@id/updateBtn"
+            android:gravity="center"/>
+
+        <Button
+            android:id="@+id/updateBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/oldName_input"
+            android:text="UPDATE"
+            android:onClick="update"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ListView
+        android:id="@+id/userList"
+        android:layout_width="wrap_content"
+        android:layout_height="226dp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="15dp"
+        android:layout_marginVertical="15dp">
+        <EditText
+            android:id="@+id/delete_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:hint="Enter Name to Delete Data"
+            />
+
+        <Button
+            android:id="@+id/deleteBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="DELETE"
+            android:onClick="delete"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
+
+
+
