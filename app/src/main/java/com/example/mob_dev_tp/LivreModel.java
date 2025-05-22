@@ -8,6 +8,7 @@ public class LivreModel {
     private String author;
     private int year;
 
+    public LivreModel(){};
     public LivreModel(int id, String title, String author, int year) {
         this.id= id;
         this.title = title;

@@ -8,11 +8,11 @@ import androidx.annotation.Nullable;
 
 public class BaseSQLite extends SQLiteOpenHelper {
     private  static final String DATABASE_NAME = "livreDB";
-    private  static final String TABLE_NAME = "Livre";
-    private  static final String COLUMN_ID = "id";
-    private  static final String COLUMN_TITLE = "title";
-        private  static final String COLUMN_AUTHOR = "author";
-    private  static final String COLUMN_YEAR = "year";
+    public   static final String TABLE_NAME = "Livre";
+    public   static final String COLUMN_ID = "id";
+    public   static final String COLUMN_TITLE = "title";
+    public   static final String COLUMN_AUTHOR = "author";
+    public   static final String COLUMN_YEAR = "year";
     public BaseSQLite(@Nullable Context context) {
         super(context, DATABASE_NAME, null, 1);
     }
