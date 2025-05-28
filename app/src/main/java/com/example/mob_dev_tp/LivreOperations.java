@@ -85,7 +85,7 @@ public class LivreOperations {
         ContentValues cv = new ContentValues();
         cv.put(BaseSQLite.COLUMN_ISBN, livre.getIsbn());
         cv.put(BaseSQLite.COLUMN_NAME, livre.getNom());
-        db.update(BaseSQLite.TABLE_NAME, cv, BaseSQLite.COLUMN_ID + " = ?", new String[]{String.valueOf(livre.getId())});
+        db.update(BaseSQLite.TABLE_NAME, cv, BaseSQLite.COLUMN_ID + " = ?", new String[]{String.valueOf(livre.getId())})
     }
 
     public void deleteLivre(LivreModel livre) {
